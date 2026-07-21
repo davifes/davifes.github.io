@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi | Links</title>
+    
+    <!-- Importando a biblioteca de ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Estilos Globais */
+        :root {
+            --bg-color: #F3F4F6; /* Cinza muito claro, como na referência */
+            --text-color: #111827; /* Preto suave para texto */
+            --button-bg: #FFFFFF; /* Fundo branco para botões */
+            --button-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
+            --button-hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra maior no hover */
+            --accent-color: #0ea5e9; /* Cor de destaque */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 480px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem; /* Espaçamento entre as seções */
+        }
+
+        /* Seção de Perfil */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover; /* Importante: garante que a foto HTML não fique distorcida */
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.75rem; /* Ajuste para o espaçamento que o flexbox dava */
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .profile-bio {
+            font-size: 1rem;
+            color: #6B7280; /* Cinza para bio */
+        }
+
+        /* Lista de Links */
+        .links-list {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .link-item {
+            width: 100%;
+        }
+
+       .link-button {
+            /* 1. Parte que conserta o alinhamento e a sobreposição */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px; /* Espaço entre o ícone e o texto */
+            
+            /* 2. O "resto do código" que mantém o botão bonito */
+            width: 100%;
+            padding: 1.25rem;
+            background-color: var(--button-bg);
+            border-radius: 1rem; 
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: var(--button-shadow);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* O ícone agora precisa apenas do tamanho, sem position absolute */
+        .link-button i {
+            font-size: 1.3rem;  
+        }
+
+        .link-button:hover {
+            box-shadow: var(--button-hover-shadow);
+            transform: translateY(-2px); /* Efeito de elevação */
+        }
+
+        /* Rodapé com Ícones */
+        .footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #6B7280; 
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+            .link-button {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            .link-button i {
+                left: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Seção de Perfil -->
+        <header class="profile">
+            <!-- A imagem é carregada via CSS no arquivo anterior -->
+            <img src="imagens/foto-perfil.jpg" alt="Foto do Davi" class="profile-pic">
+            <h1 class="profile-name">Davi Felipe da Silva</h1>
+            <p class="profile-bio">Desenvolvedor | Engenharia da Computação | IFSP</p>
+        </header>
+
+        <!-- Lista de Links -->
+        <nav class="links">
+            <ul class="links-list">
+                <li class="link-item">
+                    <a href="#portfolio" class="link-button" target="_blank">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Meu Portfólio
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="https://github.com/davifes" class="link-button" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="https://www.linkedin.com/in/davifes/" class="link-button" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="https://wa.me/5518991519431" class="link-button" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Rodapé com Ícones (Também atualizados para o Font Awesome para ficar padrão) -->
+        <!-- Rodapé com Ícones -->
+        <footer class="footer">
+            <!-- Ícone de Email -->
+            <a href="mailto:seuemail@email.com" class="social-icon" aria-label="Enviar email">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+            
+            <!-- Ícone do Twitter -->
+            <a href="https://x.com/_davifees" class="social-icon" target="_blank" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <!-- NOVO: Ícone do Instagram -->
+            <a href="https://www.instagram.com/davifees/" class="social-icon" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </footer>
+    </div>
+
+</body>
+</html>
