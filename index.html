@@ -123,10 +123,22 @@
 
         /* Rodapé com Ícones */
         .footer {
-            margin-top: 1rem;
             display: flex;
+            flex-direction: column; /* Coloca a div de ícones e o texto um embaixo do outro */
+            align-items: center; /* Centraliza tudo no meio da tela */
+            gap: 20px; /* Cria um espaço de respiração entre os ícones e a assinatura */
+        }
+
+        .icones-container {
+            display: flex;
+            flex-direction: row; 
             justify-content: center;
-            gap: 1.5rem;
+            gap: 25px; /* Controla a distância entre um ícone e outro */
+        }
+
+        .icones-sociais {
+            display: flex;
+            gap: 15px; /* Espaço entre os ícones de email, X e Instagram */
         }
 
         .social-icon {
@@ -139,6 +151,12 @@
         .social-icon:hover {
             color: #6B7280; 
             transform: scale(1.1);
+        }
+
+        .assinatura {
+            margin: 0;
+            color: #666;
+            font-size: 14px; /* Ajuste o tamanho conforme preferir */
         }
 
         /* Responsividade */
@@ -154,7 +172,7 @@
             .link-button i {
                 left: 1.25rem;
             }
-        }
+        }       
     </style>
 </head>
 <body>
@@ -201,22 +219,27 @@
         <!-- Rodapé com Ícones (Também atualizados para o Font Awesome para ficar padrão) -->
         <!-- Rodapé com Ícones -->
         <footer class="footer">
-            <!-- Ícone de Email -->
-            <a href="mailto:seuemail@email.com" class="social-icon" aria-label="Enviar email">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-            
-            <!-- Ícone do Twitter -->
-            <a href="https://x.com/_davifees" class="social-icon" target="_blank" aria-label="X (Twitter)">
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
+    <!-- Crie esta div para agrupar os ícones na mesma linha -->
+    <div class="icones-container">
+        <!-- Ícone de Email -->
+        <a href="mailto:seuemail@email.com" class="social-icon" aria-label="Enviar email">
+            <i class="fa-regular fa-envelope"></i>
+        </a>
+        
+        <!-- Ícone do Twitter -->
+        <a href="https://x.com/_davifees" class="social-icon" target="_blank" aria-label="X (Twitter)">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
 
-            <!-- NOVO: Ícone do Instagram -->
-            <a href="https://www.instagram.com/davifees/" class="social-icon" target="_blank" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </footer>
-    </div>
+        <!-- NOVO: Ícone do Instagram -->
+        <a href="https://www.instagram.com/davifees/" class="social-icon" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div> <!-- Fim do grupo de ícones -->
+
+    <!-- Assinatura fica de fora do grupo de ícones -->
+    <p class="assinatura">Desenvolvido por Davi Felipe da Silva | 2026</p>
+</footer>
 
 </body>
 </html>
